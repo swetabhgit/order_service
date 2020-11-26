@@ -1,8 +1,9 @@
 const mongoose = require('mongoose')
 const {Schema} = mongoose
+const {menuDb} = require('../connection/db')
 
 const menuSchema = new Schema({
-    customerId:String,items:[String]
+    _id:String, name:String,price:Number,restaurantId:String
 })
 
-exports.menuModel = mongoose.model('Menu', menuSchema)
+exports.menuModel = menuDb.model('Menu', menuSchema)

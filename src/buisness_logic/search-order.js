@@ -7,13 +7,9 @@ searchOrder =async (customerId)=>{
     if(customerId)
     {
 let orders = await orderModel.findOne({customerId})
-console.log(orders)
-return orders
+return orders? new Promise((resolve)=>(resolve(orders))):new Promise((resolve)=>(resolve(null)))
     }
-else
-{
-   throw new Error("please provide customer id in querysting")
-}
+return "provide correct customerId"
 
 } 
 exports.search = searchOrder

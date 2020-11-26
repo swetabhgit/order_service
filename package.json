@@ -3,10 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node index"
+    "start": "node index",
+    "test": "mocha",
+    "test-coverage": "nyc mocha"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",
@@ -14,8 +17,12 @@
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "joi": "^17.3.0",
+    "mocha": "^8.2.1",
     "mongoose": "^5.10.13",
     "morgan": "~1.9.1",
+    "nyc": "^15.1.0",
+    "redis": "^3.0.2",
+    "sinon": "^9.2.1",
     "winston": "^3.3.3"
   }
 }

@@ -1,8 +1,8 @@
 const orderModel = require('../model/order').orderModel
-const {logger} = require('../../utils/winston')
-
+const {customerIdSchema} = require('../../utils/validation.schema')
 deleteOrder =async (customerId)=>{
-let order = await orderModel.deleteOne({customerId:customerId})
-return order
+let validate = await customerIdSchema.validateAsync(customerId)
+let order = orderModel.deleteOne({customerId:customerId})
+return new Promise((resolve)=>resolve(order))
 } 
 exports.deleteOrder = deleteOrder
